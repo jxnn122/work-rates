@@ -185,7 +185,7 @@
 }
 
 /* =====================================================
-   PROOF IS IN THE PLAYBACK
+   ANIMATED EDIT TIMELINE
 ===================================================== */
 
 .proof-section {
@@ -194,67 +194,6 @@
     color: #fff;
     overflow: clip;
 }
-
-
-/* =========================
-   HEADING
-========================= */
-
-.proof-heading {
-    max-width: 1600px;
-
-    margin: 0 auto;
-
-    padding: 160px 6% 80px;
-}
-
-
-.proof-eyebrow {
-    display: block;
-
-    margin-bottom: 30px;
-
-    font-size: 11px;
-    font-weight: 600;
-
-    letter-spacing: 0.22em;
-
-    color: rgba(255,255,255,0.4);
-}
-
-
-.proof-heading h2 {
-    margin: 0;
-
-    max-width: 1300px;
-
-    font-size: clamp(
-        70px,
-        8vw,
-        155px
-    );
-
-    line-height: 0.84;
-
-    letter-spacing: -0.065em;
-
-    font-weight: 700;
-}
-
-
-.proof-heading h2 span {
-    color: rgba(255,255,255,0.22);
-}
-
-
-.proof-heading p {
-    margin-top: 35px;
-
-    font-size: 14px;
-
-    color: rgba(255,255,255,0.42);
-}
-
 
 /* =========================
    SCROLL
@@ -780,13 +719,6 @@
         margin-top: 10px;
     }
 
-    .proof-heading {
-        padding:
-            110px 24px
-            60px;
-    }
-
-
     .proof-scroll {
         height: 150vh;
     }
@@ -828,15 +760,6 @@
 
     .currently-heading h2 {
         font-size: clamp(46px, 15vw, 70px);
-    }
-
-    .proof-heading {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-
-    .proof-heading h2 {
-        font-size: clamp(50px, 17vw, 78px);
     }
 
     .edit-window {
