@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recover access to your private JXNN Studio Client Room.">
+  <meta name="theme-color" content="#070709">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Recover Client Room — JXNN. Studio</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css?v=20260726">
+  <style>
+    .recovery-form { max-width: 560px; margin-top: 32px; }
+    .recovery-form .form-actions { align-items: flex-start; flex-direction: column; }
+    .recovery-form .button { width: 100%; }
+    .recovery-note {
+      padding: 16px 18px;
+      margin-top: 24px;
+      border: 1px solid rgba(141, 104, 255, .25);
+      border-radius: 14px;
+      background: rgba(141, 104, 255, .07);
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.65;
+    }
+    .recovery-note strong { color: var(--text); }
+    .recovery-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    @media (max-width: 680px) {
+      .recovery-actions,
+      .recovery-actions .button { width: 100%; }
+    }
+  </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body class="client-room-page">
+  <div class="client-room-shell">
+    <header class="client-room-topbar">
+      <a class="brand" href="./" aria-label="JXNN Studio home"><img src="assets/profile.png" alt="">JXNN.<span>STUDIO</span></a>
+      <span class="client-private"><i></i> Secure room recovery</span>
+    </header>
+
+    <main>
+      <section class="client-gate" id="requestPanel" tabindex="-1">
+        <div class="client-orbit" aria-hidden="true"><i></i><span>KEY</span></div>
+        <div class="eyebrow">Private access · Recovery line</div>
+        <h1>FIND YOUR <span class="outline">TIMELINE.</span></h1>
+        <p>Enter the email address used for your project enquiry. If an active Client Room exists, a private one-time access link will be sent to you.</p>
+
+        <form class="recovery-form" id="recoveryForm">
+          <div class="form-trap" aria-hidden="true">
+            <label for="recoveryWebsite">Website</label>
+            <input id="recoveryWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-field">
+            <label for="recoveryEmail">Project email address</label>
+            <input id="recoveryEmail" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="verification-field">
+            <div class="turnstile-frame">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAD7Yn6ZcbvughtqN" data-theme="dark" data-size="flexible" data-action="room_recovery"></div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button primary" id="recoveryButton" type="submit">Send recovery link ↗</button>
+            <p class="form-note">For privacy, the website will not confirm whether an email address has an active room.</p>
+          </div>
+
+          <p class="form-status" id="recoveryStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="recovery-note"><strong>Security note:</strong> recovery links expire after 15 minutes and work only once. Recovering access replaces your previous Client Room link.</div>
+      </section>
+
+      <section class="client-gate" id="sentPanel" hidden tabindex="-1">
+        <div class="client-orbit" aria-hidden="true"><i></i><span>SENT</span></div>
+        <div class="eyebrow">Recovery request received</div>
+        <h1>CHECK YOUR <span class="outline">INBOX.</span></h1>
+        <p>If that email address has an active Client Room, a secure recovery link is on its way. Remember to check your spam folder.</p>
+        <div class="recovery-actions">
+          <button class="button primary" id="tryAgainButton" type="button">Try another email</button>
+          <a class="button" href="./">Back to the studio</a>
+        </div>
+      </section>
+
+      <section class="client-gate" id="redeemingPanel" hidden tabindex="-1" role="status" aria-live="polite">
+        <div class="client-orbit" aria-hidden="true"><i></i><span>OPEN</span></div>
+        <div class="eyebrow">One-time key accepted</div>
+        <h1>OPENING YOUR <span class="outline">ROOM.</span></h1>
+        <p>Replacing your old access link and loading the private timeline…</p>
+      </section>
+
+      <section class="client-gate" id="errorPanel" hidden tabindex="-1" role="alert">
+        <div class="client-orbit error" aria-hidden="true"><i></i><span>404</span></div>
+        <div class="eyebrow">Recovery link unavailable</div>
+        <h1>KEY <span class="outline">EXPIRED.</span></h1>
+        <p id="errorMessage">This recovery link is invalid, expired or has already been used.</p>
+        <div class="recovery-actions">
+          <a class="button primary" href="recover.html">Request another link ↗</a>
+          <a class="button" href="contact.html">Contact JXNN</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="recover.js"></script>
+</body>
+</html>

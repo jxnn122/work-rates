@@ -22,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css?v=20260726">
 
   <style>
     :root {
@@ -1107,6 +1108,133 @@
       </div>
     </section>
 
+    <section class="currently-working" id="currently-working">
+      <div class="currently-container">
+        <div class="currently-top">
+          <div class="currently-label">
+            <span class="live-dot" aria-hidden="true"></span>
+            CURRENTLY WORKING ON
+          </div>
+          <span class="currently-year">2026</span>
+        </div>
+
+        <div class="currently-content">
+          <div class="currently-heading reveal">
+            <h2>WHAT'S ON<br>THE <span>TIMELINE</span></h2>
+            <p>A look at what I'm currently editing, creating and experimenting with behind the scenes.</p>
+          </div>
+
+          <div class="current-projects">
+            <article class="current-project reveal">
+              <div class="project-number">01</div>
+              <div class="project-main">
+                <span class="project-category">LONG FORM</span>
+                <h3>GTA RP TROLLING CONTENT</h3>
+                <p>Fast-paced long-form editing with storytelling, sound design, subtitles and motion graphics.</p>
+              </div>
+              <div class="project-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                Editing
+              </div>
+            </article>
+
+            <article class="current-project reveal">
+              <div class="project-number">02</div>
+              <div class="project-main">
+                <span class="project-category">CREATOR CONTENT</span>
+                <h3>YOUTUBE PROJECT</h3>
+                <p>Building high-retention creator content with cinematic pacing and polished visual effects.</p>
+              </div>
+              <div class="project-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                In progress
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" id="proof">
+      <div class="proof-heading reveal">
+        <span class="proof-eyebrow">JXNN / THE EDIT</span>
+        <h2>PROOF IS IN<br>THE <span>PLAYBACK.</span></h2>
+        <p>Every cut, sound and frame has a purpose.</p>
+      </div>
+
+      <div class="proof-scroll">
+        <div class="proof-sticky">
+          <div class="edit-window">
+            <div class="edit-topbar">
+              <div class="edit-left">
+                <span class="edit-live-dot" aria-hidden="true"></span>
+                JXNN / FINAL EDIT
+              </div>
+              <div class="edit-timecode">00:00:00:00</div>
+            </div>
+
+            <div class="edit-preview">
+              <div class="preview-grid" aria-hidden="true"></div>
+              <div class="preview-copy">
+                <span>JXNN</span>
+                <h3>BUILT TO<br>HOLD ATTENTION.</h3>
+                <small>VIDEO EDITING / MOTION DESIGN</small>
+              </div>
+              <div class="preview-progress" aria-hidden="true">
+                <div class="preview-progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="edit-timeline" aria-hidden="true">
+              <div class="timeline-labels">
+                <span>VIDEO</span>
+                <span>TEXT</span>
+                <span>AUDIO</span>
+              </div>
+
+              <div class="timeline-content">
+                <div class="timeline-playhead">
+                  <div class="playhead-head"></div>
+                  <div class="playhead-line"></div>
+                </div>
+
+                <div class="timeline-track video-track">
+                  <div class="timeline-clip clip-1">INTRO</div>
+                  <div class="timeline-clip clip-2">STORY</div>
+                  <div class="timeline-clip clip-3">MOTION</div>
+                  <div class="timeline-clip clip-4">OUTRO</div>
+                </div>
+
+                <div class="timeline-track text-track">
+                  <div class="text-clip text-1">CAPTIONS</div>
+                  <div class="text-clip text-2">TITLES</div>
+                </div>
+
+                <div class="timeline-track audio-track">
+                  <div class="waveform">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="edit-bottom">
+              <span>1920 × 1080</span>
+              <div class="edit-controls" aria-hidden="true">
+                <span>◀</span>
+                <span class="edit-play">▶</span>
+                <span>▶</span>
+              </div>
+              <span>60 FPS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-section">
       <div class="section-shell">
         <div class="cta-card reveal">
@@ -1224,6 +1352,62 @@
       window.addEventListener("resize", () => {
         if (window.innerWidth > 680) setMenu(false);
       });
+    })();
+
+    (() => {
+      const proofScroll = document.querySelector(".proof-scroll");
+      const editWindow = document.querySelector(".edit-window");
+      const playhead = document.querySelector(".timeline-playhead");
+      const progressFill = document.querySelector(".preview-progress-fill");
+      const timecode = document.querySelector(".edit-timecode");
+
+      if (!proofScroll || !editWindow || reduceMotion) return;
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+      const lerp = (start, end, amount) => start + (end - start) * amount;
+      let ticking = false;
+
+      function updateProofAnimation() {
+        const rect = proofScroll.getBoundingClientRect();
+        const distance = Math.max(proofScroll.offsetHeight - window.innerHeight, 1);
+        const animationProgress = clamp(-rect.top / distance, 0, 1);
+        const smoothProgress = animationProgress * animationProgress * (3 - 2 * animationProgress);
+        const mobile = window.innerWidth <= 900;
+
+        const width = lerp(mobile ? 90 : 72, mobile ? 94 : 96, smoothProgress);
+        const height = lerp(mobile ? 65 : 72, mobile ? 78 : 88, smoothProgress);
+        const radius = lerp(18, 4, smoothProgress);
+        const translateY = lerp(45, 0, smoothProgress);
+        const scale = lerp(0.92, 1, smoothProgress);
+
+        editWindow.style.width = `${width}vw`;
+        editWindow.style.height = `${height}vh`;
+        editWindow.style.borderRadius = `${radius}px`;
+        editWindow.style.transform = `translateY(${translateY}px) scale(${scale})`;
+
+        if (playhead) playhead.style.left = `${animationProgress * 100}%`;
+        if (progressFill) progressFill.style.width = `${animationProgress * 100}%`;
+
+        if (timecode) {
+          const totalFrames = Math.floor(animationProgress * 32 * 60);
+          const seconds = Math.floor(totalFrames / 60);
+          const frames = totalFrames % 60;
+          timecode.textContent = `00:00:${String(seconds).padStart(2, "0")}:${String(frames).padStart(2, "0")}`;
+        }
+      }
+
+      function requestProofUpdate() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateProofAnimation();
+          ticking = false;
+        });
+      }
+
+      window.addEventListener("scroll", requestProofUpdate, { passive: true });
+      window.addEventListener("resize", requestProofUpdate);
+      updateProofAnimation();
     })();
   </script>
   <script type="module" src="site-notifications.js?v=20260722"></script>

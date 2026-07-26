@@ -1,0 +1,883 @@
+/* =====================================================
+   CURRENTLY WORKING ON
+===================================================== */
+
+.currently-working {
+    position: relative;
+    width: 100%;
+    padding: 140px 5%;
+    overflow: hidden;
+}
+
+.currently-working::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.025);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.currently-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.currently-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.currently-label,
+.currently-year {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.currently-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+}
+
+.currently-year {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.live-dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--acid);
+    box-shadow: 0 0 15px rgba(200, 255, 50, 0.8);
+}
+
+.live-dot::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border: 1px solid rgba(200, 255, 50, 0.5);
+    border-radius: 50%;
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.7); opacity: 1; }
+    70%,
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.currently-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+    padding-top: 90px;
+}
+
+.currently-heading h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(55px, 6vw, 105px);
+    font-weight: 700;
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+}
+
+.currently-heading h2 span {
+    color: rgba(255, 255, 255, 0.22);
+}
+
+.currently-heading p {
+    max-width: 420px;
+    margin-top: 40px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.current-projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-project {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 30px;
+    align-items: center;
+    padding: 42px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: padding 0.35s ease, background 0.35s ease;
+}
+
+.current-project:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (hover: hover) {
+    .current-project:hover {
+        padding-right: 25px;
+        padding-left: 25px;
+        background: rgba(255, 255, 255, 0.025);
+    }
+}
+
+.project-number {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 12px;
+}
+
+.project-category {
+    display: block;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.project-main h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(25px, 2.4vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.project-main p {
+    max-width: 520px;
+    margin: 15px 0 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.project-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--acid);
+    box-shadow: 0 0 12px rgba(200, 255, 50, 0.6);
+}
+
+/* =====================================================
+   PROOF IS IN THE PLAYBACK
+===================================================== */
+
+.proof-section {
+    position: relative;
+    background: #050505;
+    color: #fff;
+    overflow: clip;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.proof-heading {
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding: 160px 6% 80px;
+}
+
+
+.proof-eyebrow {
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.22em;
+
+    color: rgba(255,255,255,0.4);
+}
+
+
+.proof-heading h2 {
+    margin: 0;
+
+    max-width: 1300px;
+
+    font-size: clamp(
+        70px,
+        8vw,
+        155px
+    );
+
+    line-height: 0.84;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 700;
+}
+
+
+.proof-heading h2 span {
+    color: rgba(255,255,255,0.22);
+}
+
+
+.proof-heading p {
+    margin-top: 35px;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,0.42);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.proof-scroll {
+    height: 190vh;
+}
+
+
+.proof-sticky {
+    position: sticky;
+
+    top: 0;
+
+    height: 100vh;
+    padding-top: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   EDITOR WINDOW
+========================= */
+
+.edit-window {
+    width: 72vw;
+    height: 72vh;
+    max-width: 1450px;
+    max-height: calc(100vh - 120px);
+    min-height: min(420px, calc(100vh - 120px));
+
+    background: #090909;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transform:
+        translateY(45px)
+        scale(0.92);
+
+    box-shadow:
+        0 40px 120px
+        rgba(0,0,0,0.55);
+
+    will-change:
+        width,
+        height,
+        border-radius,
+        transform;
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.edit-topbar {
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    color:
+        rgba(255,255,255,0.42);
+}
+
+
+.edit-left {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.edit-live-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--acid);
+}
+
+
+/* =========================
+   PREVIEW
+========================= */
+
+.edit-preview {
+    position: relative;
+
+    height: 50%;
+
+    overflow: hidden;
+
+    background: #060606;
+}
+
+
+.preview-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.15;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.05) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.05) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        60px 60px;
+}
+
+
+.preview-copy {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.preview-copy > span {
+    margin-bottom: 18px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.3em;
+
+    color: var(--acid);
+}
+
+
+.preview-copy h3 {
+    margin: 0;
+
+    font-size: clamp(
+        38px,
+        4.5vw,
+        82px
+    );
+
+    line-height: 0.87;
+
+    letter-spacing: -0.055em;
+}
+
+
+.preview-copy small {
+    margin-top: 25px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.2em;
+
+    color:
+        rgba(255,255,255,0.3);
+}
+
+
+/* PREVIEW PROGRESS */
+
+.preview-progress {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 18px;
+
+    height: 2px;
+
+    background:
+        rgba(255,255,255,0.1);
+}
+
+
+.preview-progress-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background: var(--acid);
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.edit-timeline {
+    height: calc(50% - 100px);
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.timeline-labels {
+    display: grid;
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+    border-right:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.timeline-labels span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+
+    color:
+        rgba(255,255,255,0.3);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.05);
+}
+
+
+/* TIMELINE AREA */
+
+.timeline-content {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.timeline-track {
+    height: 33.333%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 6px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.05);
+}
+
+
+/* =========================
+   CLIPS
+========================= */
+
+.timeline-clip,
+.text-clip {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 12px;
+
+    font-size: 7px;
+    letter-spacing: 0.12em;
+
+    color: rgba(255,255,255,0.65);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    overflow: hidden;
+}
+
+
+.clip-1 {
+    width: 17%;
+}
+
+
+.clip-2 {
+    width: 28%;
+}
+
+
+.clip-3 {
+    width: 32%;
+}
+
+
+.clip-4 {
+    flex: 1;
+}
+
+
+.text-track {
+    padding-left: 15%;
+}
+
+
+.text-1 {
+    width: 32%;
+}
+
+
+.text-2 {
+    width: 37%;
+
+    margin-left: 7%;
+}
+
+
+.text-clip {
+    background:
+        rgba(157,255,0,0.08);
+
+    border-color:
+        rgba(157,255,0,0.18);
+}
+
+
+/* =========================
+   AUDIO
+========================= */
+
+.waveform {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.waveform span {
+    flex: 1;
+
+    height: 25%;
+
+    max-width: 5px;
+
+    background:
+        rgba(157,255,0,0.55);
+}
+
+
+.waveform span:nth-child(2n) {
+    height: 55%;
+}
+
+
+.waveform span:nth-child(3n) {
+    height: 80%;
+}
+
+
+.waveform span:nth-child(5n) {
+    height: 40%;
+}
+
+
+/* =========================
+   PLAYHEAD
+========================= */
+
+.timeline-playhead {
+    position: absolute;
+
+    z-index: 20;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    pointer-events: none;
+}
+
+
+.playhead-line {
+    position: absolute;
+
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background: var(--acid);
+}
+
+
+.playhead-head {
+    position: absolute;
+
+    top: 0;
+    left: -4px;
+
+    width: 9px;
+    height: 7px;
+
+    background: var(--acid);
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.edit-bottom {
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+
+    color:
+        rgba(255,255,255,0.3);
+}
+
+
+.edit-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.edit-play {
+    color: var(--acid);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .currently-working {
+        padding: 100px 25px;
+    }
+
+    .currently-content {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .current-project {
+        grid-template-columns: 40px 1fr;
+        gap: 15px;
+        padding: 30px 0;
+    }
+
+    .project-status {
+        grid-column: 2;
+        margin-top: 10px;
+    }
+
+    .proof-heading {
+        padding:
+            110px 24px
+            60px;
+    }
+
+
+    .proof-scroll {
+        height: 150vh;
+    }
+
+
+    .edit-window {
+        width: 90vw;
+        height: 65vh;
+        min-height: min(390px, calc(100vh - 120px));
+    }
+
+
+    .timeline-labels {
+        display: none;
+    }
+
+
+    .edit-timeline {
+        grid-template-columns: 1fr;
+    }
+
+
+    .preview-copy h3 {
+        font-size: clamp(32px, 10vw, 42px);
+    }
+
+}
+
+@media (max-width: 520px) {
+    .currently-working {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .currently-content {
+        gap: 50px;
+        padding-top: 65px;
+    }
+
+    .currently-heading h2 {
+        font-size: clamp(46px, 15vw, 70px);
+    }
+
+    .proof-heading {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .proof-heading h2 {
+        font-size: clamp(50px, 17vw, 78px);
+    }
+
+    .edit-window {
+        min-height: min(360px, calc(100vh - 120px));
+    }
+
+    .edit-topbar,
+    .edit-bottom {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .edit-topbar {
+        font-size: 8px;
+    }
+
+    .preview-copy > span {
+        margin-bottom: 12px;
+    }
+
+    .preview-copy small {
+        margin-top: 16px;
+        font-size: 7px;
+    }
+
+    .timeline-clip,
+    .text-clip {
+        padding-left: 5px;
+        font-size: 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .live-dot::after {
+        animation: none;
+    }
+
+    .edit-window {
+        width: min(96vw, 1450px);
+        height: 88vh;
+        border-radius: 4px;
+        transform: none;
+    }
+}

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="theme.css?v=20260726">
 </head>
 <body class="client-room-page">
   <div class="client-room-shell">
@@ -33,7 +33,10 @@
         <div class="eyebrow">Link unavailable</div>
         <h1>THIS ROOM IS <span class="outline">OFFLINE.</span></h1>
         <p id="errorMessage">This private link is invalid, expired or has been replaced. Ask JXNN Studio for a fresh invite.</p>
-        <a class="button primary" href="contact.html">Contact the studio ↗</a>
+        <div class="button-row">
+          <a class="button primary" href="recover.html">Recover room access ↗</a>
+          <a class="button" href="contact.html">Contact the studio</a>
+        </div>
       </section>
 
       <section class="client-room" id="clientRoom" hidden>

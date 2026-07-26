@@ -6,3 +6,6 @@ verify_jwt = false
 
 [functions.client-room]
 verify_jwt = false
+
+[functions.recover-room]
+verify_jwt = false

@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
   background: var(--bg);
 }
 
@@ -1606,10 +1607,10 @@ img {
   .nav-links .nav-cta::after { color: #08080a; }
   body.menu-open { overflow: hidden; }
   .page-main { padding-top: 86px; }
-  .page-hero { min-height: auto; padding-bottom: 65px; }
+  .page-hero { min-height: auto; padding-bottom: 65px; overflow: hidden; }
   .page-hero h1 { font-size: clamp(3.8rem, 18vw, 6.1rem); }
   .page-object { min-height: 265px; }
-  .scene { min-height: 310px; }
+  .scene { min-height: 310px; overflow: hidden; }
   .price-stack { height: 215px; }
   .price-sheet strong { margin-top: 30px; font-size: 2.5rem; }
   .question-cube { width: 155px; height: 155px; }
@@ -1659,6 +1660,8 @@ img {
   .client-private { display: none; }
   .client-gate { margin-top: 42px; padding: 30px 23px; border-radius: 23px; }
   .client-gate h1 { font-size: clamp(3rem, 17vw, 5.4rem); }
+  .discord-callback-gate { overflow: hidden; }
+  .discord-callback-gate h1 { font-size: clamp(2.7rem, 14vw, 5.4rem); }
   .client-room-hero h1 { font-size: clamp(3rem, 16vw, 5.7rem); }
   .client-progress { grid-template-columns: repeat(2, 1fr); }
   .client-progress li:nth-child(2) { border-right: 0; }
