@@ -3,4 +3,5 @@ Allow: /
 Disallow: /admin.html
 Disallow: /client.html
 Disallow: /discord-callback.html
+Disallow: /recover.html
 Sitemap: https://jxnn.store/sitemap.xml

@@ -58,17 +58,17 @@ work-rates/
 ├── rates.html          # Editing and thumbnail pricing
 ├── thumbnail.html      # Thumbnail portfolio and lightbox
 ├── faq.html            # Production questions and answers
-├── contact.html        # Structured project enquiry form
-├── admin.html          # Private enquiries, notes and analytics dashboard
-├── client.html         # Token-protected project conversation and approvals
-├── recover.html        # One-time Client Room email recovery
+├── contact.html        # X-first project contact page
+├── admin.html          # Legacy private dashboard (not linked publicly)
+├── client.html         # Legacy private Client Room (not linked publicly)
+├── recover.html        # Legacy room recovery (not linked publicly)
 ├── privacy.html        # Project-form privacy notice
 ├── tos.html            # Terms of service
 ├── 404.html            # Custom missing-sequence page
 ├── theme.css           # Shared secondary-page design system
 ├── shared.js           # Scroll, reveal, gallery and mobile-menu interactions
-├── site-notifications.js # Same-device Client Room ready alerts
-├── contact.js          # Verified enquiry submission
+├── site-notifications.js # Legacy Client Room alerts (not loaded publicly)
+├── contact.js          # Legacy verified enquiry submission
 ├── analytics.js        # Anonymous first-party event tracking
 ├── admin.js            # Enquiry, notes and analytics controls
 ├── client.js           # Private Client Room messages and project signals
@@ -85,7 +85,7 @@ Open the project folder in VS Code and select **Go Live**, or open `index.html` 
 
 Keep `theme.css`, `shared.js` and every HTML page in the same folder. The `assets` directory should remain beside them.
 
-The enquiry form uses Cloudflare Turnstile and a Supabase Edge Function to verify each submission before storing it. Server-side request limits and duplicate detection add a second layer of spam protection. The site also records anonymous page and interaction totals for the private dashboard without cookies or stored IP addresses.
+The public contact flow opens the existing [@jxnn122](https://x.com/jxnn122) profile on X. The previous enquiry, dashboard and Client Room files remain in the repository for compatibility and data/security continuity, but they are no longer linked or loaded by the public site. The site records anonymous page and interaction totals without cookies or stored IP addresses.
 
 Accepted projects can be given a private **Client Room**. New enquiries receive a random same-device notification token; only its salted hash is stored. When the studio creates a room, the client sees a themed website notification in the browser they used for the enquiry and can open the private conversation immediately. The room link keeps its access token in the URL fragment. Clients can send messages, request revisions, ask to talk or approve a cut without creating an account. If a client loses the link, the recovery page can send a time-limited, one-use replacement to the email address on the enquiry. New client signals alert the studio through Discord; studio replies remain organised in the private dashboard and appear in the client timeline. Clients can also opt in to private Discord bot alerts for replies and project-status changes, then disconnect those alerts whenever they like.
 
@@ -95,10 +95,8 @@ The Edge Functions expect `TURNSTILE_SECRET_KEY` and `RATE_LIMIT_SALT` as privat
 
 <div align="center">
 
-[![Project form](https://img.shields.io/badge/START-A_PROJECT-c8ff32?style=for-the-badge&labelColor=070709&color=c8ff32)](https://jxnn.store/contact.html)
-[![Discord](https://img.shields.io/badge/DISCORD-JOIN_THE_STUDIO-8d68ff?style=for-the-badge&labelColor=070709&color=8d68ff)](https://discord.gg/qgJNMFy3F6)
+[![Message on X](https://img.shields.io/badge/MESSAGE_ON_X-%40JXNN122-c8ff32?style=for-the-badge&labelColor=070709&color=c8ff32)](https://x.com/jxnn122)
 [![Instagram](https://img.shields.io/badge/INSTAGRAM-%40JAXONGARFORTH1-f4f2eb?style=for-the-badge&labelColor=070709&color=f4f2eb)](https://instagram.com/jaxongarforth1)
-[![X](https://img.shields.io/badge/X-%40JXNN122-f4f2eb?style=for-the-badge&labelColor=070709&color=f4f2eb)](https://x.com/jxnn122)
 
 <sub>© 2026 JXNN. STUDIO — CUT DIFFERENT.</sub>
 
