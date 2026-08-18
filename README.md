@@ -27,7 +27,6 @@ This repository contains the complete studio portfolio: selected edits, thumbnai
 | Client | Work |
 | --- | --- |
 | [OkHarry](https://twitch.tv/okharry) | Gaming, IRL editing and thumbnail design |
-| [Beta Squad](https://www.youtube.com/@BetaSquad) | Entertainment subtitles and post-production |
 
 ## Services
 
