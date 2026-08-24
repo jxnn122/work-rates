@@ -155,7 +155,7 @@ function emailHtml(projectTitle: string, link: string) {
           font-weight:700;
           letter-spacing:2px;
         ">
-          JXNN STUDIO / CLIENT ROOM
+          JXNN STORE / CLIENT ROOM
         </p>
 
         <h1 style="

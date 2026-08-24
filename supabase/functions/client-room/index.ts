@@ -19,7 +19,7 @@ const roomStatuses = new Set([
 const statusLabels: Record<string, string> = {
   active: "Room open",
   waiting_client: "Waiting for you",
-  waiting_studio: "With JXNN Studio",
+  waiting_studio: "With JXNN Store",
   revision: "Revision round",
   approved: "Cut approved",
   complete: "Project complete",
@@ -115,7 +115,7 @@ async function notifyStudioDiscord(webhookUrl: string, details: {
             { name: "Client", value: discordValue(details.clientName), inline: true },
             { name: "Project", value: discordValue(details.projectTitle), inline: true },
           ],
-          footer: { text: "Reply from the private JXNN Studio dashboard." },
+          footer: { text: "Reply from the private JXNN Store dashboard." },
           timestamp: new Date().toISOString(),
         }],
       }),
@@ -258,7 +258,7 @@ Deno.serve(async (request) => {
         const dm = await sendClientDiscordDm(
           botToken,
           room.discord_user_id,
-          `New reply from JXNN Studio — ${room.project_title}\n\n${message}\n\nOpen your existing private Client Room link to reply.`,
+          `New reply from JXNN Store — ${room.project_title}\n\n${message}\n\nOpen your existing private Client Room link to reply.`,
           room.discord_dm_channel_id || "",
         );
         discordDelivered = dm.delivered;
@@ -299,7 +299,7 @@ Deno.serve(async (request) => {
         const dm = await sendClientDiscordDm(
           botToken,
           room.discord_user_id,
-          `Project update from JXNN Studio — ${room.project_title}\n\nStatus: ${statusLabels[nextStatus] || nextStatus}`,
+          `Project update from JXNN Store — ${room.project_title}\n\nStatus: ${statusLabels[nextStatus] || nextStatus}`,
           room.discord_dm_channel_id || "",
         );
         discordDelivered = dm.delivered;

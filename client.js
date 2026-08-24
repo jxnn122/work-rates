@@ -118,7 +118,7 @@ function renderMessages(scroll = false) {
     const meta = document.createElement("div");
     const sender = document.createElement("strong");
     const time = document.createElement("time");
-    sender.textContent = item.sender === "studio" ? "JXNN Studio" : item.sender === "client" ? "You" : "Project signal";
+    sender.textContent = item.sender === "studio" ? "JXNN Store" : item.sender === "client" ? "You" : "Project signal";
     time.dateTime = item.created_at;
     time.textContent = formatMessageTime(item.created_at);
     meta.append(sender, time);
@@ -148,7 +148,7 @@ async function loadRoom({ quiet = false } = {}) {
   } catch (error) {
     if (!quiet || error.status === 401) {
       showError(error.status === 401
-        ? "This private link is invalid, expired or has been replaced. Ask JXNN Studio for a fresh invite."
+        ? "This private link is invalid, expired or has been replaced. Ask JXNN Store for a fresh invite."
         : "The Client Room could not connect. Please try again in a moment.");
     }
   }
@@ -245,7 +245,7 @@ disconnectDiscordButton?.addEventListener("click", async () => {
 });
 
 if (!/^[0-9a-f]{64}$/i.test(accessToken)) {
-  showError("This page needs a private Client Room link from JXNN Studio.");
+  showError("This page needs a private Client Room link from JXNN Store.");
 } else {
   await loadRoom();
   const discordFlash = sessionStorage.getItem("jxnnDiscordFlash");

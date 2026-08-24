@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="./assets/profile.png" width="110" alt="JXNN Studio logo">
+  <img src="./assets/profile.png" width="110" alt="JXNN Store logo">
 
-  <h1>JXNN. STUDIO</h1>
+  <h1>JXNN. STORE</h1>
 
   <p><strong>YOUR STORY. CUT SHARPER.</strong></p>
   <p>Cinematic, high-retention video editing for creators and brands.</p>
@@ -16,7 +16,7 @@
 
 ## The studio
 
-JXNN. Studio turns raw footage into sharp, high-retention stories through purposeful pacing, clean sound, motion design and platform-ready finishing.
+JXNN. Store turns raw footage into sharp, high-retention stories through purposeful pacing, clean sound, motion design and platform-ready finishing.
 
 This repository contains the complete studio portfolio: selected edits, thumbnail work, service rates, production information and contact routes.
 
@@ -97,6 +97,6 @@ The Edge Functions expect `TURNSTILE_SECRET_KEY` and `RATE_LIMIT_SALT` as privat
 [![Message on X](https://img.shields.io/badge/MESSAGE_ON_X-%40JXNN122-c8ff32?style=for-the-badge&labelColor=070709&color=c8ff32)](https://x.com/jxnn122)
 [![Instagram](https://img.shields.io/badge/INSTAGRAM-%40JAXONGARFORTH1-f4f2eb?style=for-the-badge&labelColor=070709&color=f4f2eb)](https://instagram.com/jaxongarforth1)
 
-<sub>© 2026 JXNN. STUDIO — CUT DIFFERENT.</sub>
+<sub>© 2026 JXNN. STORE — CUT DIFFERENT.</sub>
 
 </div>

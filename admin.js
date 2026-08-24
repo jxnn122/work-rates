@@ -684,7 +684,7 @@ function createEnquiryCard(enquiry) {
   if (replyAddress) {
     const email = document.createElement("a");
     email.className = "button primary compact";
-    email.href = `mailto:${replyAddress}?subject=${encodeURIComponent(`Your ${enquiry.project_type} enquiry — JXNN Studio`)}`;
+    email.href = `mailto:${replyAddress}?subject=${encodeURIComponent(`Your ${enquiry.project_type} enquiry — JXNN Store`)}`;
     email.textContent = `Reply to ${replyAddress} ↗`;
     actions.append(email);
   }
