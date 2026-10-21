@@ -131,6 +131,20 @@
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 22px; }
     .grid .wide { grid-column: 1 / -1; }
 
+    .short-form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+    .short-media {
+      aspect-ratio: 9 / 16;
+      max-height: 680px;
+      margin-inline: auto;
+      border-radius: 16px;
+    }
+    .short-media video { object-fit: contain; }
+
     .meta { display: flex; justify-content: space-between; gap: 12px; padding: 12px 4px 0; }
     .meta h3 { font-size: 1.02rem; font-weight: 600; letter-spacing: -0.01em; }
     .meta span { flex-shrink: 0; color: var(--muted); font-size: .9rem; }
@@ -177,6 +191,8 @@
       .top { padding: 14px 0; }
       .btn { min-height: 40px; padding: 0 16px; font-size: .9rem; }
       .grid { grid-template-columns: 1fr; }
+      .short-form-grid { grid-template-columns: 1fr; }
+      .short-media { width: min(100%, 380px); }
       .label { flex-direction: column; gap: 4px; }
       .media, .reel .media { border-radius: 14px; }
       footer { flex-direction: column; }
@@ -283,6 +299,35 @@
             <button class="sound" type="button" aria-pressed="false">🔇 Sound</button>
           </div>
           <div class="meta"><h3>"The Very Best of Rice Patel"</h3><span>OkHarry</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block shell" id="short-form">
+      <div class="label reveal"><h2>Short Form</h2><span>Vertical edits · tap to play</span></div>
+      <div class="short-form-grid">
+        <article class="reveal">
+          <div class="media short-media">
+            <video controls playsinline preload="metadata">
+              <source src="assets/short-form-pd-trolling-draft-1.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="meta"><h3>PD trolling</h3><span>Original edit</span></div>
+        </article>
+
+        <article class="reveal">
+          <div class="media short-media">
+            <iframe src="https://www.tiktok.com/player/v1/7555924979401968918?controls=1&amp;description=0&amp;music_info=0" title="OkHarry TikTok video" loading="lazy" allow="fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="meta"><h3>OkHarry</h3><span>TikTok</span></div>
+        </article>
+
+        <article class="reveal">
+          <div class="media short-media">
+            <iframe src="https://www.tiktok.com/player/v1/7573327612261534998?controls=1&amp;description=0&amp;music_info=0" title="OkHarry TikTok video" loading="lazy" allow="fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="meta"><h3>OkHarry</h3><span>TikTok</span></div>
         </article>
       </div>
     </section>
